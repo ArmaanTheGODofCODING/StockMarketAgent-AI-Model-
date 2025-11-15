@@ -1,0 +1,96 @@
+// ...existing code...
+
+Project goal
+- Build a reproducible pipeline and model(s) to analyze and generate actionable signals for equities (stock-level and portfolio-level).
+- Clarify scope: prediction horizon (intraday / daily / weekly / monthly), assets covered, and allowed actions (long-only, long/short, portfolio weights).
+
+Data sources & freshness
+- Price data: OHLCV (tick, minute, daily) from reliable providers (e.g., exchange feeds, Alpha Vantage, Tiingo, Polygon).
+- Fundamentals: quarterly/annual financials, earnings, ratios.
+- Alternative: news sentiment, macro series, economic calendars, options/vol implied vol, insider filings.
+- Ensure timestamps are in UTC; maintain source provenance and update cadence.
+
+Targets & labeling
+- Define explicit targets: next-day return, T-day return, direction (up/down), event-driven response.
+- Avoid look-ahead bias: use only information available at prediction timestamp.
+- Provide classification and regression variants for different use cases.
+
+Preprocessing & feature engineering
+- Align multiple feeds to a single time index; resample as needed.
+- Handle missing data: forward-fill only where justified; mark imputed data.
+- Standard features: returns, log returns, rolling mean/volatility, RSI, MACD, SMA/EMA, ATR, VWAP, volume-weighted metrics.
+- Fundamental features: normalized ratios, earnings surprise flags, momentum across fundamentals.
+- Date/time features: day-of-week, month, earnings calendar proximity, market open/close flags.
+- Cross-sectional features: z-score within sector/market cap buckets.
+
+Train/validation/test split & CV
+- Use time series aware splits (walk-forward / expanding window) — no random shuffles across time.
+- Keep a realistic validation period that includes different market regimes.
+- Reserve a final out-of-time test for simulated live performance.
+
+Model choices & baselines
+- Always implement simple baselines: historical mean, momentum rule, logistic regression.
+- Tree-based models: LightGBM / XGBoost for tabular engineered features.
+- Neural nets: 1D CNN, LSTM/GRU, Transformer models for raw sequences; be cautious of overfitting.
+- Ensembles: stacking or blending of diverse models.
+- Regularization, early stopping, and robust hyperparameter search (Bayesian, grid).
+
+Evaluation metrics
+- Prediction metrics: MAE, RMSE for regression; accuracy, AUC, precision/recall for classification.
+- Trading metrics: cumulative return, CAGR, volatility, Sharpe ratio, max drawdown, Calmar ratio.
+- Transaction metrics: turnover, average holding period, hit rate, P&L per trade.
+- Use bootstrap or walk-forward backtests to estimate strategy confidence intervals.
+
+Backtesting & realism
+- Implement realistic execution: simulate transaction costs, slippage, market impact, liquidity constraints, and order types.
+- Use per-symbol position limits, sector/portfolio constraints, and realistic leverage rules.
+- Rebalance frequency aligned with prediction horizon.
+
+Risk management & constraints
+- Capital allocation rules, stop losses, position sizing (Kelly, fixed fraction), and diversification constraints.
+- Stress-test strategies: regime shifts, crisis scenarios, outlier events.
+
+Explainability & auditability
+- Provide feature importance, partial dependence, and SHAP explanations.
+- Log model inputs/outputs, random seeds, environment, and data snapshots to enable reproducibility.
+
+Monitoring & production
+- Data pipeline: validation, alerting on missing or anomalous feeds.
+- Model monitoring: performance drift detection, PSI, weight drift, and periodic retrain triggers.
+- Canary deployment or shadow-mode evaluation before live execution.
+
+Compliance & ethics
+- Document data licenses and usage restrictions.
+- Avoid using non-public or proprietary insider information.
+- Display clear user-facing disclaimers: models are probabilistic and not financial advice.
+
+Reproducibility & experiment tracking
+- Store experiments with hyperparameters, seeds, metrics, and artifacts (MLflow / Weights & Biases).
+- Version-control code and data schema; snapshot training datasets.
+
+Deliverables checklist
+- Data ingestion scripts and schema docs.
+- Feature engineering notebook and feature store exports.
+- Baseline models + production-ready pipelines.
+- Backtest engine with configurable costs and constraints.
+- Monitoring dashboards and retraining plan.
+- README with how to run, assumptions, and limitations.
+
+Limitations & safety note
+- Models do not guarantee future returns. Validate on out-of-sample data and monitor in production.
+- Keep the human-in-loop for final trading decisions and risk overrides.
+
+Implementation suggestions
+- Start with daily OHLCV + simple momentum baseline; add features incrementally.
+- Use walk-forward CV and record live-simulated P&L before real execution.
+- Automate data validation tests and scheduled retraining.
+
+Contact / ownership
+- Assign dataset owner, feature owner, model owner, and deployment owner for accountability.
+- Maintain a changelog for model and data updates.
+
+NIFTY/SENSEX
+-  Do tell about the NIFTY 50 and SENSEX stocks and their expected opening and closing. 
+
+WARNING : YOU ARE NOT REQUIRED TO ANSWER ANY OTHER SORT OF QUESTIONS, IF THE USER HAS ASKED ANY OTHER SORT, you do not need to
+answer.

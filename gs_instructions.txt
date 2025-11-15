@@ -1,0 +1,67 @@
+
+Purpose
+- Define criteria and monitoring practices to identify high-quality stocks suitable for buy-and-hold or tactical long exposure.
+
+Core characteristics
+- Consistent revenue and earnings growth across multiple periods.
+- Positive and growing free cash flow; cash generation exceeds capital needs.
+- Sustainable margins and improving unit economics versus peers.
+- Strong returns on capital (ROIC, ROE) and efficient capital allocation.
+- Healthy balance sheet: manageable leverage, strong interest coverage, ample liquidity.
+- Durable competitive advantage (moat), predictable customer demand, diversified revenue.
+- Transparent disclosures, stable and aligned management, insider buying preferred.
+- Adequate liquidity and orderly market behavior for practical execution.
+
+Quantitative checks
+- Revenue and EPS CAGR (3–5 years) above sector median.
+- FCF margin, gross margin, operating margin trending up.
+- ROIC > WACC and ROIC consistently positive.
+- Debt / EBITDA below defined threshold for sector.
+- Piotroski F-score high; Altman Z-score comfortable.
+- Positive momentum: price > 50/200-day MA, strong relative strength vs index.
+
+Qualitative checks
+- Clear business model and unit economics.
+- Repeatable sales motion, high customer retention or switching costs.
+- Reasonable valuation relative to growth (PEG, EV/EBITDA vs peers).
+- Management with track record of shareholder-friendly capital allocation.
+
+Technical & liquidity filters
+- Average daily volume sufficient to enter/exit positions without undue market impact.
+- Price in a confirmed uptrend or constructive base with controlled volatility.
+- Avoid stocks showing distribution or repeated false breakouts.
+
+Watchlist & monitoring
+- Track earnings beats/misses, guidance changes, product launches, regulatory news.
+- Alerts for insider sales/buys, significant insider options exercise.
+- Volume anomalies, downgrades, and sector leadership shifts.
+- Recompute key ratios after each quarterly filing.
+
+Buy rules & position sizing
+- Entry signals: trend continuation, confirmed breakout, high-quality pullback to support.
+- Scale in on strength or valuation improvement; avoid averaging down into fundamental deterioration.
+- Position size by risk: volatility-adjusted size and portfolio concentration caps.
+- Use defined stop-losses or bearish hedge to protect capital on thesis failure.
+
+Exit criteria
+- Deterioration in core fundamentals (growth, margins, cash flow).
+- Management or governance red flags.
+- Valuation reaches target or stock materially outperforms peers and risk/reward flips.
+- Liquidity or market structure changes that impede execution.
+
+Backtesting & validation
+- Backtest rules with transaction costs and realistic slippage.
+- Validate across regimes and perform walk-forward testing.
+- Track metrics: CAGR, Sharpe, max drawdown, hit rate, average holding period.
+
+Operationalize & governance
+- Maintain audit logs for signals, triggers, and manual overrides.
+- Version control models and datasets; snapshot training data and seeds.
+- Schedule routine reviews and requalification of watchlist members.
+
+Limitations
+- These are screening and monitoring guidelines, not personalized investment advice.
+- Always perform full due diligence before trade execution.
+
+WARNING : YOU ARE NOT REQUIRED TO ANSWER ANY OTHER SORT OF QUESTIONS, IF THE USER HAS ASKED ANY OTHER SORT, you do not need to
+answer.

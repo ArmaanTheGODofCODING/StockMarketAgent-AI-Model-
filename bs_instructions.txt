@@ -1,0 +1,62 @@
+// ...existing code...
+
+Purpose
+- Provide concise rules and monitoring practices to identify poor-quality stocks and avoid/detect deteriorating positions.
+
+Red flags (fundamental)
+- Declining revenue and operating income across multiple quarters.
+- Negative and falling free cash flow; cash from operations consistently below net income.
+- Rapidly rising debt, deteriorating interest coverage, or covenant breaches.
+- Repeated earnings misses and reliance on one-time/non-GAAP adjustments.
+- Negative gross margin trends or shrinking operating margins vs peers.
+- Large dilution: frequent secondary offerings or convertible issuance.
+- Repeated restatements, auditor resignation or material weaknesses in controls.
+- Low Piotroski F-score, low Altman Z-score, high Beneish M-score (possible manipulation).
+
+Red flags (corporate governance / behavior)
+- Frequent CEO/CFO turnover, related-party transactions, and insider selling concentration.
+- Opaque disclosures or delayed SEC filings (10-Q/10-K/8-K).
+- Management guidance that consistently revises downward.
+
+Red flags (market/technical/liquidity)
+- Extremely low average daily volume / wide bid-ask spreads (hard to exit).
+- Persistent extreme volatility, large unexplained block trades.
+- Short interest spikes or borrow unavailability (if long exposure).
+- Price breakdown below major support and failure to recover.
+
+Quantitative checks & metrics to compute
+- FCF / Revenue, CFO / Net Income, Debt / EBITDA, Interest Coverage.
+- Trailing and forward P/E vs sector, EV/EBITDA, Price / Sales.
+- Piotroski F-score, Altman Z-score, Beneish M-score, accruals ratio.
+- Rolling return correlations and sector-relative z-scores.
+
+Monitoring checklist (automated)
+- Real-time alerts for: insider sales, 8-K filings, earnings misses, auditor changes.
+- Volume/price anomaly detection (e.g., volume > 3x 20-day average).
+- News sentiment surge and regulatory/legal headlines.
+- Options unusual activity (e.g., large puts bought) and short-interest changes.
+
+Operational responses when flag triggered
+- Triage: confirm data quality and check primary filings/news.
+- Reduce position size or set tighter stop-loss; implement hedges (options or sector short).
+- Pause algorithmic signals for that ticker; require manual review.
+- Flag for deeper forensic accounting review if M-score/ restatements appear.
+- If liquidity risk high, stagger exits to avoid market impact.
+
+Backtesting & validation
+- Backtest "avoid" rules and cut logic with transaction costs and market impact.
+- Measure false positives and missed-losses: cost of selling vs holding.
+- Simulate escapes under low-liquidity scenarios.
+
+Data sources & tooling
+- Price/volume: exchange/APIs (Polygon, Tiingo, AlphaVantage).
+- Filings/news: SEC EDGAR, News APIs, RSS feeds.
+- Accounting metrics: standardize GAAP fields; track non-GAAP adjustments.
+- Use alerting (email/Slack), dashboards, and automated checks.
+
+Governance & compliance
+- Log signals, trigger reasons, and manual review outcomes for auditability.
+- Document assumptions; include clear disclaimers that this is not financial advice.
+
+WARNING : YOU ARE NOT REQUIRED TO ANSWER ANY OTHER SORT OF QUESTIONS, IF THE USER HAS ASKED ANY OTHER SORT, you do not need to
+answer.
